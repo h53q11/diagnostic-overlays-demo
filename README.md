@@ -1,24 +1,104 @@
-# diagnostic-overlays-demo
-Minimal demonstrator for diagnostic overlay framework (toy model + overlay)
-# Diagnostic Overlays – Toy Demonstrator 
 
-This repository provides a minimal toy example accompanying the manuscript
-on multimodal diagnostic overlays for tabular deep learning.
+# diagnostic-overlays-demo  
+Minimal demonstrator for diagnostic overlay framework (toy models + safe diagnostic overlays)
 
-The demo trains a small MLP on synthetic tabular data and visualises a simple
-gradient-noise overlay during training.
+---
 
-# Toy Demonstrator for Reproducibility
+## Overview
 
-To support reproducibility requirements and provide a minimal illustration of the diagnostic overlay workflow, a simplified demonstrator is supplied in the accompanying repository. The demonstrator is intentionally independent of the full multimodal overlay system described in the main manuscript and is designed solely to show the structure of an overlay pipeline in a lightweight, reproducible form.
+This repository provides a **simplified, conceptual demonstrator** accompanying the manuscript on *multimodal diagnostic overlays for tabular deep learning*.  
+It is designed to illustrate the **structure** of diagnostic overlays in a lightweight, reproducible form **without exposing the full experimental pipeline** used in the study.
 
-The toy example trains a small multilayer perceptron (MLP) on a synthetic tabular regression dataset generated using `make_regression`. During training, two simple diagnostic signals are recorded at each optimisation step: (i) the ℓ2‑norm of the parameter gradients, used as a proxy for gradient‑noise fluctuations, and (ii) the variance of hidden‑layer activations, used as a proxy for activation stability. These signals are collected alongside the batch loss and plotted as aligned traces over training steps, forming a basic “overlay” that illustrates how internal model behaviour can be monitored during optimisation.
+The demonstrator includes:
 
-The demonstrator consists of a single Python script (`run_demo.py`) and a minimal dependency file (`requirements.txt`). It is intended as a conceptual example only and does not reproduce the full multimodal, multicoloured diagnostic overlays developed for the main study. All code required to run the toy example is provided in the public repository referenced in the Code Availability Statement.
+- A **toy MLP** trained on synthetic tabular regression data  
+- A **toy GRU** trained on synthetic sequential data  
+- Simple diagnostic overlays:
+  - ℓ2‑norm of parameter gradients  
+  - variance of hidden activations  
+  - training loss  
+- A safe **model‑initialisation example**  
+- A safe **attribution demonstrator** (gradient attribution + integrated gradients)  
+- A placeholder **perturbation function**  
+- A unified configuration dictionary and reproducibility seed  
 
+All components are intentionally minimal and conceptual.
 
-## Installation
+---
+
+## Purpose
+
+The demonstrator supports reproducibility by showing:
+
+- how diagnostic signals can be collected during optimisation  
+- how overlays can be plotted over training steps  
+- how attribution can be computed in principle  
+- how model initialisation and configuration can be structured  
+
+It is **not** intended to reproduce the full multimodal, behaviour‑aware diagnostic overlays developed in the main manuscript.  
+Those overlays involve additional modules, temporal analysis, perturbation‑based metrics, and multimodal integration that cannot be released due to methodological complexity and ongoing research dependencies.
+
+---
+
+## What the demonstrator includes
+
+- `run_demo.py`  
+  - MLP diagnostic overlay  
+  - GRU diagnostic overlay  
+  - attribution demo (gradient + IG)  
+  - model initialisation demo  
+  - synthetic datasets  
+  - reproducibility seed  
+  - safe perturbation placeholder  
+  - unified configuration dictionary  
+
+- `requirements.txt`  
+  Minimal dependencies required to run the demonstrator.
+
+---
+
+## What the demonstrator does **not** include
+
+- full multimodal diagnostic overlay system  
+- behaviour‑aware perturbation metrics  
+- temporal instability analysis  
+- multimodal integration pipeline  
+- experimental configuration used in the manuscript  
+- real datasets  
+- proprietary modules or research code  
+
+These components remain private and are not required for conceptual reproducibility.
+
+---
+
+## Running the demonstrator
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-## Usage
+Run all demos:
+
+```bash
 python run_demo.py
+```
+
+This will execute:
+
+- MLP overlay demo  
+- GRU overlay demo  
+- model initialisation demo  
+- attribution demo  
+
+Each produces diagnostic plots illustrating the conceptual workflow.
+
+---
+
+## Citation
+
+If you use this demonstrator, please cite the accompanying manuscript.
+
+---
+
