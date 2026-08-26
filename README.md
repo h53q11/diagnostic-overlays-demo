@@ -8,6 +8,7 @@ Minimal demonstrator for diagnostic overlay framework (toy models + safe diagnos
 
 This repository provides a **simplified, conceptual demonstrator** accompanying the manuscript on *multimodal diagnostic overlays for tabular deep learning*.  
 It is designed to illustrate the **structure** of diagnostic overlays in a lightweight, reproducible form **without exposing the full experimental pipeline** used in the study.
+The repository exposes a minimal end‑to‑end pipeline structure (data, models, training, diagnostics, attribution, utilities) for conceptual reproducibility.
 
 The demonstrator includes:
 
@@ -67,7 +68,7 @@ Those overlays involve additional modules, temporal analysis, perturbation‑bas
 - real datasets  
 - proprietary modules or research code  
 
-These components remain private and are not required for conceptual reproducibility.
+These components remain private and are not required for reproducing the conceptual workflow demonstrated here.
 
 ---
 
